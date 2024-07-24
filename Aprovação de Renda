@@ -1,0 +1,42 @@
+
+def calcular_renda(renda, imposto = 1000):
+    return renda - imposto
+
+def usuarios(**aprovados):
+   lista_usuarios.append(aprovados)
+   return aprovados
+
+lista_usuarios = []
+tela = True
+while tela == True:
+    renda = int(input('Digite sua renda: '))
+
+    renda = calcular_renda(renda)
+
+    if renda < 500:
+      print('Sua renda estar baixa')
+      print(renda)
+      print('Tente novamente\n')
+
+    else:
+        print('Renda aprovada')
+        print (renda)
+        exibir_renda = renda
+        renda = True  
+        if renda == True:
+           print(usuarios(nome = input('Digite o nome do usuario: ').capitalize(), renda_usuario = exibir_renda, idade= int(input('Digite a idade: '))))
+        
+    if renda == True:
+     print('1 - Nova renda')
+     print('2 - Verificar Informações')
+     print('3 - Encerrar')
+     opc = int(input('Digite a opção: '))
+     if opc == 1:
+         print('Calcula renda novamente!')
+     elif opc == 2:
+        for x in lista_usuarios:
+           print(x)
+     else:
+        print('Encerrando o atendimento')
+        break
+
