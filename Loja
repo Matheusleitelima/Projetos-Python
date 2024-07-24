@@ -1,0 +1,61 @@
+
+def adicionarlista():
+    print('1 - adicionar na lista tenis')
+    print('2 - adicionar na lista camisa')
+    print('3 - adicionar na lista calça')
+    opc_adc = int(input('Digite a opção: '))
+
+    if opc_adc == 1:
+        adc_tenis = input('Diigte o tenis que deseja adicionar: ')
+        tenis.append(adc_tenis)
+
+    elif opc_adc == 2:
+        adc_camisa = input('Digite a camisa que deseja adicionar: ')
+        camisa.append(adc_camisa)
+
+    elif opc_adc == 3:
+        adc_calça = input('Digite a calça que deseja adicionar: ')
+        calça.append(adc_calça)
+
+def verificar_listas():
+
+        print('1 - tenis')
+        print('2 - camisa')
+        print('3 - calça')
+        opc_lista = int(input('Digite a opção: '))
+
+        if opc_lista == 1:
+            for i in tenis:
+                print(tenis)
+                break
+
+        elif opc_lista == 2:
+             for x in camisa:
+                 print(camisa)
+                 break
+
+        elif opc_lista == 3:
+             for y in calça:
+                 print(calça)
+                 break
+    
+        else:
+         print('Digite uma opção valida.')
+
+tenis = []
+camisa = []
+calça = []
+tela_user = True
+while tela_user == True:    
+    print('1- adicionar itens')
+    print('2- Verificar itens')
+
+    opc_user = int(input('Digite uma opção: '))
+
+    if opc_user == 1:
+        adicionarlista()
+
+    elif opc_user == 2:
+        verificar_listas()
+        
+
