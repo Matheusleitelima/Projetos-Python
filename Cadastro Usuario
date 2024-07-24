@@ -1,0 +1,83 @@
+
+tela_user = True
+
+while tela_user == True:
+    print('CADASTRO ALL SYSTEM')
+    print('1 - Cadastro')
+    print('2 - Sair')
+
+    opc = int(input('Digite uma opção: '))
+    if opc == 1:
+        cadastro = True
+        break
+    elif opc == 2:
+        cadastro = False
+        break
+
+    else:
+        print('Digite uma opção validade')
+
+#CADASTRO
+
+while  cadastro == True:
+    nome = input('Qual é seu nome: ')
+    nome = nome.title().strip()
+
+    idade = int(input('Qual é sua idade: '))
+    verificar_idade = idade
+    if verificar_idade >= 18:
+        verificar_idade = True
+    else:
+        verificar_idade = False
+    
+
+    senha = int(input('Digite sua senha entre 200 e 1000: '))
+    senha +=5
+
+    verificar_senha = senha
+
+    if 200<= verificar_senha <=1005:
+        verificar_senha = True
+    else:
+         verificar_senha = False
+
+    criptografia_senha = senha
+    criptografia_senha = str(criptografia_senha)
+
+    renda = int(input('Digite sua renda: '))
+    verificar_renda = renda
+    if verificar_renda >= 500:
+        verificar_renda = True
+
+    else:
+        verificar_renda = False
+
+    banco = input('Qual o seu banco: ')
+    banco = banco.title().strip()
+
+    if verificar_renda and verificar_idade and verificar_senha:
+        print('\nCadastro realizado com sucesso!\n')
+        print(f' nome= {nome}\n idade = {idade}\n senha= {criptografia_senha}\n renda = {renda}\n banco = {banco}')
+        #OPÇÃO DE REALIZAR CADASTRO NOVAMENTE 
+        return_cadastro = int(input('Se deseja realizar novamente digite 1 se não 2: '))
+        if return_cadastro == 1:
+            print('Iremos realizar novamente seu cadastro')
+        else:
+            print('Encerrando sistema')
+            break
+    else:
+        print('\nCadastro Invalido')
+        print('Retorne novamente\n')
+
+if cadastro == False:
+    print('Encerrando')
+    
+    
+
+
+
+
+
+
+
+
