@@ -1,0 +1,163 @@
+
+def adicionar_item():
+    item = input("Digite um item que deseja adicionar: ").lower()
+    
+    while True:
+        try:
+            preco = float(input("Digite o preço: "))
+            items_vender[item] = preco
+            print("Item Adicionado! \n")
+            break
+        except ValueError:
+            print('Erro valor, digite novamente')
+
+def remover_item():
+    for keys, values in items_vender.items():
+            print(f'{keys} / valor: R${values}')
+    
+    print('======================================\n')
+
+    
+    while True:
+        try:
+            item_remover = input("Digite o item que deseja remover: ").lower()
+            print('\n')
+            del items_vender[item_remover]
+            break
+        except KeyError:
+            print('====================================')
+            print(f'Item {item_remover} não encontrado, digite novamente.')
+            print('=====================================\n')
+
+def atualizar_items():
+   
+    while True:
+     for keys, values in items_vender.items():
+        print(f'{keys} / valor: R${values}')
+
+     print('======================================\n')
+
+     item_atualizar = input('Digite o item que deseja atualizar: ')
+    
+     if item_atualizar in items_vender:
+        while True:
+         try:
+            atualizar_preco = float(input('Digte o preco atualizado: '))
+            print('-----------------------------------------')
+            print('Item atualizado com sucesso!\n')
+            items_vender.update({item_atualizar : atualizar_preco} )
+            break
+         except ValueError:
+          print('Erro no valor\n')
+     else:
+        print('Não encontrado, digite novamente\n')
+     break
+
+def item_vendidos():
+
+    produtos_vendidos = input('Digite o produto que foi vendido: ').lower()
+    if produtos_vendidos in items_vender:
+        quantidade_vendas = int(input("Quantas unidade foram vendidas: "))
+        calculo = items_vender[produtos_vendidos] * quantidade_vendas
+        print(f'valor em vendas é de R$ {calculo} \n')
+
+        
+        
+       
+        
+
+        
+
+
+
+items_vender = {}
+
+
+
+#LOJA MENU
+
+while True:
+
+    print('Sistema de Gerenciamento')
+
+    print('==================================')
+
+
+    print('==================================')
+
+    print('1 - adicionar um item em sua loja')
+
+    print('==================================')
+
+    print('2 - Verificar os items')
+
+    print('==================================')
+
+    print('3 - Remover items')
+
+    print('==================================')
+
+    print('4 - Atualizar items')
+
+    print('==================================')
+
+    print('5 - Acessar os valores')
+
+    print('==================================')
+
+    print('6 - Items Vendidos')
+
+    print('==================================')
+
+    
+    while True:
+        try:
+            opcmenu = int(input('Digite a opção: '))
+            print('======================================\n')
+            break
+    
+        except ValueError:
+         print('Erro no valor, digite novamente')
+         print('===============================')
+
+
+    if opcmenu == 1:
+        adicionar_item()
+
+    elif opcmenu == 2:
+        
+        print('======================================\n')
+
+        for keys, values in items_vender.items():
+            print("===========================")
+            print(f'{keys} / valor: R${values}')
+            print("============================\n")
+
+    
+    elif opcmenu == 3:
+        remover_item()
+    
+    elif opcmenu == 4: 
+        atualizar_items()
+
+    elif opcmenu == 5:
+        acesso_item = float(input('Digite o valor que deseja acessar: '))
+        
+        #Verificar items que é acima de um valor.
+        filtrado = dict(filter(lambda item : item[1]> acesso_item, items_vender.items()))
+        print(f'{filtrado} \n')
+
+        if filtrado != items_vender:
+            print("Esse item não foi encontrado")
+    else:
+        item_vendidos()
+
+    
+        
+         
+
+
+
+
+        
+
