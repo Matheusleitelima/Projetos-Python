@@ -54,21 +54,20 @@ def atualizar_items():
      break
 
 def item_vendidos():
-
+    global saldo
+    #Definir variavel saldo como global dentro da função
     produtos_vendidos = input('Digite o produto que foi vendido: ').lower()
     if produtos_vendidos in items_vender:
         quantidade_vendas = int(input("Quantas unidade foram vendidas: "))
         calculo = items_vender[produtos_vendidos] * quantidade_vendas
         print(f'valor em vendas é de R$ {calculo} \n')
-
-        
-        
-       
-        
-
+        saldo += calculo
+        return saldo
         
 
 
+
+saldo = 0 
 
 items_vender = {}
 
@@ -150,12 +149,13 @@ while True:
         if filtrado != items_vender:
             print("Esse item não foi encontrado")
     else:
-        item_vendidos()
+    
+        saldo = item_vendidos()
+
+        print(f'Saldo = {saldo}')
 
     
-        
-         
-
+ 
 
 
 
