@@ -1,0 +1,65 @@
+
+
+Tarefas_lista = []
+Tarefas_concluidas = []
+
+
+while True:
+    print('Sistema Gerenciador de tarefas\n')
+    print('1 - Adicionar tarefa\n')
+    print('2 - Exibir todas as tarefas\n')
+    print('3 - Tarefas concluidas\n')
+    print('4 - Remover tarefas\n')
+    print('5 - Sair\n')
+    opc = int(input('Digite uma opção: '))
+    
+
+
+    if opc == 1:
+            adc_tarefa = input('Qual tarefa deseja adicionar: ').lower()
+            Tarefas_lista.append(adc_tarefa)
+            print(f'Tarefa {adc_tarefa} adicionada\n')
+
+        
+        
+
+    elif opc == 2:
+        for tarefa in Tarefas_lista:
+            print("---------------")
+            print(f'{tarefa}')
+            print("---------------\n")
+            
+
+    elif opc == 3:
+        adc_tarefaconcl = input('Qual tarefa foi concluida: ').lower
+        if adc_tarefaconcl in Tarefas_lista:
+            Tarefas_lista.remove(adc_tarefaconcl)
+            Tarefas_concluidas.append(adc_tarefaconcl)
+            
+      
+        for tarefa in Tarefas_concluidas:
+            print("-----Tarefas concluidas------- \n")
+            print(f'{tarefa}\n')
+            
+
+    elif opc == 3:
+        tarefa_remover = input("Qual tarefa deseja remover: ").lower()
+        if tarefa_remover in Tarefas_lista:
+            Tarefas_lista.remove(tarefa_remover)
+            print(f"Tarefa {tarefa_remover} foi excluida!")
+
+        
+    else:
+        break
+
+    
+  
+
+    
+
+         
+
+
+
+
+
